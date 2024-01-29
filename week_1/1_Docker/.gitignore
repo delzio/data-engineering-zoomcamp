@@ -1,3 +1,2 @@
-yellow_tripdata_2021-01.csv
-output.csv
-output.csv.gz
+*.csv
+*.csv.gz
