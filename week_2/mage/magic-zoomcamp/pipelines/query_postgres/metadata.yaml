@@ -32,7 +32,7 @@ executor_config: {}
 executor_count: 1
 executor_type: null
 extensions: {}
-name: peaceful charm
+name: query_postgres
 notification_config: {}
 remote_variables_dir: null
 retry_config: {}
@@ -42,7 +42,7 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-02-04 09:11:57'
-uuid: peaceful_charm
+updated_at: '2024-02-04T09:11:57+00:00'
+uuid: query_postgres
 variables_dir: /home/src/mage_data/magic-zoomcamp
 widgets: []
