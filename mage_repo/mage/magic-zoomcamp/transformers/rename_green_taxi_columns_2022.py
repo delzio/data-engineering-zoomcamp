@@ -21,6 +21,8 @@ def camel_to_snake(col_name):
 @transformer
 def transform(data, *args, **kwargs):
     data.columns = [camel_to_snake(col) for col in data.columns]
+    print(data.columns)
+    print(type(data["lpep_pickup_datetime"][0]))
 
     return data
 

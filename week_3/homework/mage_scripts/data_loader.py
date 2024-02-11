@@ -25,7 +25,7 @@ def load_data_from_api(*args, **kwargs):
                     'store_and_fwd_flag':str,
                     'PULocationID':pd.Int64Dtype(),
                     'DOLocationID':pd.Int64Dtype(),
-                    'payment_type': pd.Int64Dtype(),
+                    'payment_type':pd.Int64Dtype(),
                     'fare_amount': float,
                     'extra':float,
                     'mta_tax':float,

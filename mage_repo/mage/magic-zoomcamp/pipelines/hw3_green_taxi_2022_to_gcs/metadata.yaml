@@ -26,13 +26,13 @@ blocks:
   language: python
   name: rename_green_taxi_columns_2022
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: transformer
   upstream_blocks:
   - load_green_taxi_data_2022
   uuid: rename_green_taxi_columns_2022
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration:
     file_source:
@@ -71,7 +71,7 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-02-09 04:08:32'
+updated_at: '2024-02-09 06:17:10'
 uuid: hw3_green_taxi_2022_to_gcs
 variables_dir: /home/src/mage_data/magic-zoomcamp
 widgets: []
