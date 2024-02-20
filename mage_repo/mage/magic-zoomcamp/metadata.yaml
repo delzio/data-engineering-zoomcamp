@@ -18,6 +18,8 @@ emr_config:
   # If you want to ssh tunnel into EMR cluster, ec2_key_name must be configured.
   # You can create a key pair in page https://console.aws.amazon.com/ec2#KeyPairs and download the key file.
   # ec2_key_name: '[ec2_key_pair_name]'
+queue_config:
+  concurrency: 3
 
 spark_config:
   # Application name
