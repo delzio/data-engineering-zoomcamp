@@ -13,6 +13,7 @@ sources:
       - name: yellow_trip_data_19_20
          # freshness:
            # error_after: {count: 6, period: hour}
+      - name: fhv_trip_data_19
 
 models:
     - name: stg_green_trip_data
