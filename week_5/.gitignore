@@ -1,1 +1,5 @@
-*.csv
+*.csv*
+*.parquet*
+data/
+fhvhv/
+tmp/
