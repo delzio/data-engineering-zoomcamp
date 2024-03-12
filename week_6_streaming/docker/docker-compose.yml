@@ -10,7 +10,7 @@ services:
     ports:
       - 8888:8888
     volumes:
-      - shared-workspace:/opt/workspace
+      - /home/jdelzio/data-engineering-zoomcamp/week_6_streaming/docker_notebooks:/opt/workspace
   spark-master:
     image: spark-master
     container_name: spark-master

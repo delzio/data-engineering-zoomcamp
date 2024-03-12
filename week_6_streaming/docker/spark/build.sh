@@ -24,7 +24,7 @@ docker build \
   -f spark-worker.Dockerfile \
   -t spark-worker .
 
-docker build \
+docker build --no-cache \
   --build-arg spark_version="${SPARK_VERSION}" \
   --build-arg jupyterlab_version="${JUPYTERLAB_VERSION}" \
   -f jupyterlab.Dockerfile \
