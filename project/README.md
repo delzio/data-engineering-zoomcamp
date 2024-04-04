@@ -1,22 +1,22 @@
-# Data Engineering Zoomcamp Final Project: ETL Pipeline for Pharmaceutical Production Data Analysis
+# Data Engineering Zoomcamp Final Project: ETL Pipeline for Insulin Production Data Analysis
 
 ## Introduction
-This project uses the techniques learned throughout the de zoomcamp course to extract, transform, and load data from the large-scale manufacturing of Insulin into a dashboard for analysis. 
+This project uses the techniques learned throughout participation in the DataTalks.Club 2024 data engineering zoomcamp course to extract, transform, and load data from the large-scale manufacturing of Insulin into a dashboard for analysis. 
 
 ## Background
-Insulin is a vital protein product used in the treatment of diabetes. It is produced by growing living cells which have been genetically engineered to produce the Insulin protein and is later purified from these cells and all other impurities. To understand the amount of Insulin produced, samples are typically taken at several intervals throughout the manufacturing process. This sampling is invasive and leads to delays in manufacturing and introduces risks of contamination. Raman spectroscopy is a powerful analytical technique that is becoming popular in biopharmaceutical production to analyze the composition of biological components as it is non-invasive and measurements can be taken in process eliminating the need for sampling. This technique relies on the spectrum of light scattered through a solution to measure protein concentration and quality attributes. 
+Insulin is a vital protein product used in the treatment of diabetes. It is produced by growing living cells which have been genetically engineered to produce the Insulin protein and is later purified from these cells and all other impurities. To understand the amount of Insulin produced, samples are typically taken at several intervals throughout the manufacturing process. This sampling is invasive, leading to delays in manufacturing and increased risk of contaminations. Raman spectroscopy is a powerful analytical technique which can be used to analyze the composition of biological components in solution. It is becoming popular in biopharmaceutical production since it is non-invasive and allows for measurements to be taken in process thereby eliminating the need for sampling. This technique relies on measuring the spectrum of light scattered through a solution to measure protein concentration and quality attributes. 
 
 The raw data used in this project includes 100 batches worth of processing data for the large-scale manufacutring of Insulin. Each batch includes many records of data from both sample measurements as well as Raman sepctra readings throughout the manufacturing of the Insulin product (for more info on the data set used please refer to [Data Sources](#data-sources) and [Acknowledgements](#acknowledgements)).
 
 ## Project Description
-The goal of this project is to calculate the Penicillin concentration using only the Raman measurement data for each record of the data and compare the results to the actual measured concentration of Penicillin product (from the Penicillin concentration(P:g/L) column). The first 50 batches of the dataset will be used to train and test the model and the final 50 batches will be ingested to the cloud one record at a time in batch using airflow to simulate near real time ingestion of the manufacturing data. As each record is inserted, the model will calculate the Penicillin concentration using the Raman measurement data and add the calculated Penicillin concentration result to the dataset. The final feature data will be used to create a dashboard analyzing accuracy of the model as well as the distribution of Insulin concentration between both sample measurements and model calculation results.
-
-To achieve this, this project will focus specifically on the following columns from the 100_Batches_IndPenSim_V3.csv dataset:
+This project will focus specifically on the following columns from the 100_Batches_IndPenSim_V3.csv dataset:
 - Time (h): time attribute measurements were taken (numeric)
 - Penicillin concentration(P:g/L): measured concentration of Penicillin product sample (numeric)
 - Batch ID: unique identifier of batch of Penicillin produced (integer)
 - Fault Flag: indifier for any issues during Raman spec measurement (integer)
-- {350:1750}: list of columns with Raman measurement data where the number corresponds to the wavelength in nm of light used for the measurement (numeric)
+- {350:1750}: list of columns with Raman measurement data, the number corresponds to the light wavelength in nm used (numeric)
+
+The goal of this project is to estimate the Penicillin concentration using only the Raman measurement data (from the 350-1750 nm wavelength columns) for each record (sampling point) and compare to the actual measured sample concentration (from the Penicillin concentration(P:g/L) column). The first 50 batches of the dataset will be used to train and test the model that will be used to calculate a Penicillin concentration. Each record from the final 50 batches will be ingested to the cloud in batch using airflow to simulate data being created in near real time. As each record is inserted, the estimated Penicillin concentration will be calculated by feeding the Raman measurement data to the model and the calculated result will be added to the dataset. The final feature data will be used to create a dashboard analyzing the accuracy of the model as well as the distribution of Insulin concentration between both sample measurements and model calculation results.
 
 ## Project Structure
 The project is organized into the following directories:
