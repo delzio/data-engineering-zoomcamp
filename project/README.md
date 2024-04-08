@@ -21,6 +21,7 @@ The goal of this project is to estimate the Penicillin concentration using only 
 ## Project Structure
 The project is organized into the following directories:
 
+0. `SETUP.md`: Contains instructions for setting up requirements on your Linux machine
 1. `src`: Contains source code for the ETL pipeline.
 2. `data`: Stores raw and processed data files.
 3. `model`: Contains all code related to model development (adapted from code originally created by Shashank Gupta, Ricardo Flores, and Rakesh Bobbala - see [Acknowledgements](#acknowledgements) for model development)
