@@ -1,2 +1,5 @@
 apache-airflow-providers-google
 pyarrow
+datetime
+pandas
+google-cloud-storage

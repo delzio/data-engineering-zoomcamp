@@ -1,3 +1,4 @@
 data/
 airflow/logs/*
 airflow/.env
+.google/

@@ -70,14 +70,18 @@ x-airflow-common:
     # WARNING: Use _PIP_ADDITIONAL_REQUIREMENTS option ONLY for a quick checks
     # for other purpose (development, test and especially production usage) build/extend Airflow image.
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
-    GOOGLE_APPLICATION_CREDENTIALS: /.google/credentials/google_credentials.json
-    AIRFLOW_CONN_GOOGLE_CLOUD_DEFAULT: 'google-cloud-platform://?extra__google_cloud_platform__key_path=/.google/credentials/google_credentials.json'
+    GOOGLE_APPLICATION_CREDENTIALS: /.google/credentials/gcp.json
+    AIRFLOW_CONN_GOOGLE_CLOUD_DEFAULT: 'google-cloud-platform://?extra__google_cloud_platform__key_path=/.google/credentials/gcp.json'
+    GCP_PROJECT_ID: 'intricate-reef-411403'
+    GOOGLE_CLOUD_PROJECT: 'intricate-reef-411403'
+    GCP_GCS_BUCKET: 'test_bucket-intricate-reef-41103'
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
     - ./config:/opt/airflow/config
     - ./plugins:/opt/airflow/plugins
-    - ~/.google/credentials/:/.google/credentials:ro
+    - ~/data-engineering-zoomcamp/project/.google/credentials/:/.google/credentials:ro
+    - ~/data-engineering-zoomcamp/project/data/:/.project/data/
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
