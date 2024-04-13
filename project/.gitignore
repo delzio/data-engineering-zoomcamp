@@ -1,4 +1,7 @@
-data/
+data/raw/Mendeley_data/
+data/raw/temp/*.parquet
+data/processed/*.parquet
 airflow/logs/*
 airflow/.env
-.google/
+.google/credentials/gcp.json
+lib/gcs-connector-hadoop3-2.2.5.jar
