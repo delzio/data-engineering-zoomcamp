@@ -4,4 +4,5 @@ data/processed/*.parquet
 airflow/logs/*
 airflow/.env
 .google/credentials/gcp.json
-lib/gcs-connector-hadoop3-2.2.5.jar
+lib/*jar
+airflow/dags/__pycache__/

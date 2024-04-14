@@ -82,6 +82,7 @@ x-airflow-common:
     - ./plugins:/opt/airflow/plugins
     - ~/data-engineering-zoomcamp/project/.google/credentials/:/.google/credentials:ro
     - ~/data-engineering-zoomcamp/project/data/:/.project/data/
+    - ~/data-engineering-zoomcamp/project/lib/:/.project/lib/
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on

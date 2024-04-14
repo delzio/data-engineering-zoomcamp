@@ -3,4 +3,5 @@ pyarrow
 datetime
 pandas
 google-cloud-storage
+google-cloud-bigquery
 pyspark
