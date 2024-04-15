@@ -35,6 +35,7 @@ from dag_functions import processed_to_bq
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
 BUCKET = os.environ.get("GCP_GCS_BUCKET")
 CREDENTIALS = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+DATASET = os.environ.get("GCP_BQ_DATASET")
 
 # Get file structure data
 local_data_path = "/.project/data/raw/Mendeley_data/"
@@ -50,6 +51,7 @@ spark_jar_path = "/.project/lib/gcs-connector-hadoop3-2.2.5.jar,/.project/lib/sp
 # Send raw data as series of parquet files to GCS
 # NOTE: Can take several minutes depending on internet speed
 def raw_to_gcs(gcs_bucket, gcs_path, local_data_file, local_data_path, temp_path):
+    logging.info(f"{gcs_bucket}")
     chunk_size = 10000
     next_id = 1
 
@@ -219,6 +221,7 @@ with DAG(
         python_callable=processed_to_bq,
         op_args=[
             BUCKET,
+            DATASET,
             gcs_input_path,
             gcs_output_path,
             PROJECT_ID,

@@ -1,4 +1,4 @@
-FROM apache/airflow:2.8.4
+FROM apache/airflow:2.8.4-python3.11
 
 # Set environment variables
 ENV AIRFLOW_HOME=/opt/airflow
